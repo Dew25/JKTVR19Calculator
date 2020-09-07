@@ -26,21 +26,26 @@ public class App {
             System.out.println("Введите операцию: (+,-,*,/)");
             String znak = scanner.nextLine();
             System.out.print("Результат: ");
-            if ("+".equals(znak)) {
-                System.out.println(number1 + number2);
-            }
-            if ("-".equals(znak)) {
-                System.out.println(number1 - number2);
-            }
-            if ("*".equals(znak)) {
-                System.out.println(number1 * number2);
-            }
-            if ("/".equals(znak)) {
-                if(number2 == 0){
-                    System.out.println("На ноль делить нельзяяя!");
-                }else{
-                    System.out.println(number1 / number2);
-                }
+            switch (znak) {
+                case "+":
+                    System.out.println(number1 + number2);
+                    break;
+                case "-":
+                    System.out.println(number1 - number2);
+                    break;
+                case "*":
+                    System.out.println(number1 * number2);
+                    break;
+                case "/":
+                    if(number2 == 0){
+                        System.out.println("На ноль делить нельзяяя!");
+                    }else{
+                        System.out.println(number1 / number2);
+                    }
+                    break;   
+                default:
+                    System.out.println("Выберите перечисленные операции.");
+                    break;
             }
             System.out.println("Для продолжения нажмите \"y\", для выхода нажмите любую другую клавишу");
             repeat = scanner.nextLine();
